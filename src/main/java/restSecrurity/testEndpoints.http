@@ -1,0 +1,96 @@
+POST https://yappapi.wintherdev.com/api/security/auth/register
+
+{
+    "username": "PatrickUser3",
+    "password": "1234",
+    "email": "test@email.com"
+}
+###
+
+POST https://yappapi.wintherdev.com/api/security/auth/login
+
+{
+    "username": "PatrickUser3",
+    "password": "1234"
+}
+###
+
+POST http://localhost:7070/api/security/auth/login
+
+{
+    "username": "PatrickUser3",
+    "password": "1234"
+}
+
+###
+GET http://localhost:7070/api/public/getThreads?count=0&size=3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiO
+###
+GET http://localhost:7070/api/public/getAllThreads
+###
+GET http://localhost:7070/api/public/getUserById/patrick@user1.com
+###
+GET http://localhost:7070/api/public/getThreadsByUserId/patrick@user1.com
+###
+GET http://localhost:7070/api/public/getThreadById/1
+###
+GET http://localhost:7070/api/public/getThreadById/1
+###
+GET http://localhost:7070/api/public/sortThreadByCategory/General%20Discussion
+###
+POST http://localhost:7070/api/protected/createPost
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIzIiwiZXhwIjoxNzE3MDY3Mzg5LCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwidXNlcm5hbWUiOiJQYXRyaWNrVXNlcjMifQ.5O5OHoe7PYOUnMCzVvEVDTiqK_nKfhER_A4UPmFymLY
+
+{
+    "content": "This is an example post content.",
+    "userName": "PatrickUser3",
+    "threadId": 4
+}
+###
+POST http://localhost:7070/api/protected/createThread
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIzIiwiZXhwIjoxNzE3MTg5Mzg5LCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwidXNlcm5hbWUiOiJQYXRyaWNrVXNlcjMifQ.qzqUUJ8pvU1gJZGNoNeuB9Pqp1703AdWj6NE3f1l6yk
+
+{
+    "title": "for tests",
+    "content": "This is an example content for the thread.",
+    "category": 1,
+    "userName": "PatrickUser3"
+}
+###
+POST http://localhost:7070/api/protected/createReply
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIzIiwiZXhwIjoxNzE3MDY3Mzg5LCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwidXNlcm5hbWUiOiJQYXRyaWNrVXNlcjMifQ.5O5OHoe7PYOUnMCzVvEVDTiqK_nKfhER_A4UPmFymLY
+
+{
+    "content": "newReply!",
+    "userName": "PatrickUser3",
+    "parentPostId": 33
+}
+###
+POST http://localhost:7070/api/protected/deleteThread/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIyIiwiZXhwIjoxNzE2NDQ5OTcwLCJyb2xlcyI6InVzZXIiLCJ1c2VybmFtZSI6IlBhdHJpY2tVc2VyMiJ9.y-ornfKVSihXlHcpF8gwVEhH34lL7x92eH5JmwhyXcM
+###
+
+POST http://localhost:7070/api/protected/deletePost/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIyIiwiZXhwIjoxNzE2NDQ5OTcwLCJyb2xlcyI6InVzZXIiLCJ1c2VybmFtZSI6IlBhdHJpY2tVc2VyMiJ9.y-ornfKVSihXlHcpF8gwVEhH34lL7x92eH5JmwhyXcM
+###
+
+POST http://localhost:7070/api/protected/deleteReply/21
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIzIiwiZXhwIjoxNzE3MDcxMTI1LCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwidXNlcm5hbWUiOiJQYXRyaWNrVXNlcjMifQ.1r0RepfsOk-2huhtgDLKKWPU8ut07iXOeqLAI69yePQ
+###
+
+POST http://localhost:7070/api/protected/editThread/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIyIiwiZXhwIjoxNzE2NDYzMTE3LCJyb2xlcyI6InVzZXIiLCJ1c2VybmFtZSI6IlBhdHJpY2tVc2VyMiJ9.1Hy61viKFkLrnlrKXhd5iB1IGPbj1cA0NbISAuWro-0
+
+{
+    "title": "updated title"
+}
+###
+POST http://localhost:7070/api/protected/editPost/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQYXRyaWNrIiwic3ViIjoiUGF0cmlja1VzZXIyIiwiZXhwIjoxNzE2NDYzMTE3LCJyb2xlcyI6InVzZXIiLCJ1c2VybmFtZSI6IlBhdHJpY2tVc2VyMiJ9.1Hy61viKFkLrnlrKXhd5iB1IGPbj1cA0NbISAuWro-0
+
+{
+    "content": "this post got edited"
+}
+###
+
+
